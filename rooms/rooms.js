@@ -1,5 +1,6 @@
 import { rooms } from '../data.js';
-import { findByID } from '../utils.js';
+// import { getUserStorage } from '../localStorageUtils.js';
+import { findByID, roomVisited } from '../utils.js';
 
 const h1 = document.querySelector('h1');
 const img = document.querySelector('img');
@@ -8,8 +9,6 @@ const form = document.querySelector('form');
 
 const webValue = new URLSearchParams(window.location.search);
 const roomId = webValue.get('id');
-
-// const user = JSON.parse(localStorage.getItem('USER'));
 
 
 const currentRoom = findByID(roomId, rooms);
@@ -33,5 +32,6 @@ form.append(button);
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    roomVisited(roomId);
     window.location = '../map';
 });

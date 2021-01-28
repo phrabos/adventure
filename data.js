@@ -53,7 +53,7 @@ const reddit = {
         result: `
             You decide to ignore all the hype and sell what you have already invested. Your coins increase by 30.
         `,
-        greed: 0,
+        greed: 10,
         coin: 30
     }, {
         id: 'hold',

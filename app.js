@@ -1,6 +1,9 @@
 // import functions and grab DOM elements
+import { setUserStorage } from './localStorageUtils.js';
+
+
 const form = document.querySelector('form');
-export const USER = 'USER';
+
 // initialize state
 
 // set event listeners to update state and DOM
@@ -15,7 +18,6 @@ form.addEventListener('submit', (e) => {
         greed: 5,
         completed: {},
     };
-    const stringUser = JSON.stringify(user);
-    localStorage.setItem(USER, stringUser);
+    setUserStorage(user);
     window.location = './map';
 });
