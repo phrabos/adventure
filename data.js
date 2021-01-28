@@ -94,7 +94,7 @@ const news = {
     }]
 };
 
-export const quests = [
+export const rooms = [
     planner, 
     reddit,
     news,

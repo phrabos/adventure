@@ -1,1 +1,8 @@
 /* add home page styles here */
+header {
+    height: 100px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}

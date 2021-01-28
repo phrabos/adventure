@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 const form = document.querySelector('form');
-const USER = 'USER';
+export const USER = 'USER';
 // initialize state
 
 // set event listeners to update state and DOM
