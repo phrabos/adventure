@@ -17,7 +17,7 @@ const planner = {
         id: 'short',
         description: 'Buy put-contracts to lock in a sale price for a future date',
         result: `
-            Green increases by 30 and coins increase by 50.
+            Greed increases by 30 and coins increase by 50.
         `,
         greed: 30,
         coin: 50
@@ -77,7 +77,7 @@ const news = {
         id: 'financial',
         description: 'Financial Times',
         result: 'You cannot interpret the charts and decide to be patient to learn more. Your greed goes down by 20.',
-        greed: -20,
+        greed: -5,
         coin: 0
     }, {
         id: 'journal',

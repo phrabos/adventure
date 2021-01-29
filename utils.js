@@ -1,6 +1,5 @@
-import { rooms } from './data.js';
-import { getUserStorage, setUserStorage } from './localStorageUtils.js';
 
+import { getUserStorage, setUserStorage } from './localStorageUtils.js';
 
 export function findByID(id, array){
     for (let item of array) {
@@ -17,19 +16,11 @@ export function isGameOver(user, numRooms){
 }
 
 export function howManyRoomsVisited(user){
-    let roomsVisited = 0;
-    for (let rooms in user.completed){
-        // roomsVisited += user.completed[room.id];
-        roomsVisited += user.completed[rooms];
-        // console.log(user.completed[room.id]);
-    }
-    
-    console.log(roomsVisited);
+    const roomsVisited = Object.keys(user.completed).length;
     return roomsVisited;
 }
 
 export function roomVisited(roomId){
-
     const user = getUserStorage();
     user.completed[roomId] = 1; 
     setUserStorage(user);

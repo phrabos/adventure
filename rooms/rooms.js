@@ -1,4 +1,5 @@
 import { rooms } from '../data.js';
+import { getUserStorage, setUserStorage } from '../localStorageUtils.js';
 // import { getUserStorage } from '../localStorageUtils.js';
 import { findByID, roomVisited } from '../utils.js';
 
@@ -6,12 +7,17 @@ const h1 = document.querySelector('h1');
 const img = document.querySelector('img');
 const p = document.querySelector('p');
 const form = document.querySelector('form');
+const resultSpan = document.getElementById('results-span');
+
+const backToMapButton = document.getElementById('back-to-map');
 
 const webValue = new URLSearchParams(window.location.search);
 const roomId = webValue.get('id');
 
 
+
 const currentRoom = findByID(roomId, rooms);
+
 h1.textContent = currentRoom.title;
 img.src = `../assets/${currentRoom.image}`;
 p.textContent = currentRoom.description;
@@ -33,5 +39,18 @@ form.append(button);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     roomVisited(roomId);
+    const user = getUserStorage();
+    const formData = new FormData(form);
+    const selectionId = formData.get('choices');
+    const choice = findByID(selectionId, currentRoom.choices);
+    resultSpan.textContent = choice.result;
+    user.greed += choice.greed;
+    user.money += choice.coin;
+    setUserStorage(user);
+    button.disabled = true;
+
+});
+
+backToMapButton.addEventListener('click', () => {
     window.location = '../map';
 });
