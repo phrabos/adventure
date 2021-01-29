@@ -9,7 +9,7 @@ resetButton.addEventListener('click', () =>{
 
 const user = getUserStorage();
 if (user.greed < 6){
-    div.textContent = 'wealth';
+    div.textContent = `Congrats you have accumulated ${user.money} coins while minimizing greed points to ${user.greed}`;
 } else if (user.greed < 76 && user.greed > 5){
-    div.textContent = 'you are not that greedy';
+    div.textContent = `Your `;
 } else div.textContent = 'you file bankruptcy';

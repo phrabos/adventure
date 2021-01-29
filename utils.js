@@ -10,6 +10,7 @@ export function findByID(id, array){
 
 export function isGameOver(user, numRooms){
     if (user.greed >= 80 || numRooms === 3) {
+        alert('your greed as');
         window.location = '../results';
     }
     return null;
