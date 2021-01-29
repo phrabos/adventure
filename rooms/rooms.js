@@ -7,6 +7,7 @@ const h1 = document.querySelector('h1');
 const img = document.querySelector('img');
 const p = document.querySelector('p');
 const form = document.querySelector('form');
+// const divResult = document.getElementById('results');
 const resultSpan = document.getElementById('results-span');
 
 const backToMapButton = document.getElementById('back-to-map');
