@@ -9,13 +9,15 @@ export function findByID(id, array){
 }
 
 export function isGameOver(user, numRooms){
-    if (user.greed >= 80 || numRooms === 3) {
-        alert('your greed as');
+    if (numRooms === 3){
+        alert('you have visited all rooms, let\'s check the results... ');
+        window.location = '../results';
+    } else if (user.greed >= 80) {
+        alert('your level of greed has ended your game ');
         window.location = '../results';
     }
     return null;
 }
-
 export function howManyRoomsVisited(user){
     const roomsVisited = Object.keys(user.completed).length;
     return roomsVisited;
