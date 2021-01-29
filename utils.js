@@ -1,5 +1,7 @@
 
 import { getUserStorage, setUserStorage } from './localStorageUtils.js';
+const coinStats = document.getElementById('coin-stat');
+const greedStats = document.getElementById('greed-stat');
 
 export function findByID(id, array){
     for (let item of array) {
@@ -27,4 +29,11 @@ export function roomVisited(roomId){
     const user = getUserStorage();
     user.completed[roomId] = 1; 
     setUserStorage(user);
+}
+
+export function displayStats(){
+    const user = getUserStorage();
+    coinStats.textContent = `Coins: ${user.money}`;
+    greedStats.textContent = ` Greed: ${user.greed}`;
+
 }

@@ -1,11 +1,11 @@
 import { rooms } from '../data.js';
 import { getUserStorage } from '../localStorageUtils.js';
-import { howManyRoomsVisited, isGameOver } from '../utils.js';
+import { displayStats, howManyRoomsVisited, isGameOver } from '../utils.js';
 const user = getUserStorage();
 
 const list = document.querySelector('ul');
 const numRoomsVisited = howManyRoomsVisited(user);
-
+displayStats();
 isGameOver(user, numRoomsVisited);
 
 // const roomsVisitedArray = Object.keys(user.completed);

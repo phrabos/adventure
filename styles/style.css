@@ -42,3 +42,9 @@ img {
     height: 400px;
     
 }
+.stats {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: bold;
+}

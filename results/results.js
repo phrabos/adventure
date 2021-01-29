@@ -1,4 +1,5 @@
 import { clearStorage, getUserStorage } from '../localStorageUtils.js';
+import { displayStats } from '../utils.js';
 const div = document.getElementById('result-div');
 const resetButton = document.querySelector('button');
 
@@ -6,7 +7,7 @@ resetButton.addEventListener('click', () =>{
     clearStorage();
     window.location = '../';
 });
-
+displayStats();
 const user = getUserStorage();
 if (user.greed < 6){
     div.textContent = `Congrats you have accumulated ${user.money} coins while minimizing greed points to ${user.greed}`;
